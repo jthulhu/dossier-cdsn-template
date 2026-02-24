@@ -8,19 +8,8 @@ ATTESTATIONS := $(NOM)-$(PRENOM)-CDSN_Sciences-$(DPT)-ATTESTATIONS.pdf
 all: $(NOM)-$(PRENOM)-CDSN_Sciences-$(DPT)-DOSSIER.pdf $(NOM)-$(PRENOM)-CDSN_Sciences-$(DPT)-ATTESTATIONS.pdf
 .PHONY: all
 
-cv.pdf: build/cv.pdf
+cv.pdf formulaire.pdf annexe.pdf $(DOSSIER) $(ATTESTATION): %.pdf: build/%.pdf
 	cp $< $@
-formulaire.pdf: build/formulaire.pdf
-	cp $< $@
-annexe.pdf: build/annexe.pdf
-	cp $< $@
-$(DOSSIER): build/$(DOSSIER)
-	cp $< $@
-$(ATTESTATIONS): build/$(ATTESTATIONS)
-	cp $< $@
-
-build/attestation-dens.pdf: build/certificat-scolarite.pdf | build
-	pdftk $< cat 1 output $@
 
 build/%.pdf: src/%.pdf | build
 	cp $< $@

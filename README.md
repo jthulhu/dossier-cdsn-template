@@ -12,8 +12,8 @@ Pour faire votre dossier de CDSN, vous devez accomplir les quêtes suivantes:
 - Remplir le formulaire (dans le fichier `src/formulaire.typ`).  Le formulaire contient lui-même la liste des choses à faire pour le remplir.
   Vous pouvez visualiser l'avancement du remplissage de votre formulaire en faisant `make formulaire.pdf`
 - Télécharger votre attestation d'inscription au DENS, et la placer dans `src/attestation-dens.pdf`.  Attention, si vous téléchargez votre
-  *certificat de scolarité*[^1], celui-ci contient plus de pages que celle qui vous sert.  Dans ce cas, nommez votre fichier `src/certificat-scolarite.pdf`,
-  et la page utile sera extraite automatiquement.
+  *certificat de scolarité*[^1], celui-ci contient plus de pages que celle qui vous sert.  Dans ce cas, vous pouvez obtenir votre attestation 
+  en faisant `pdftk certificat.pdf cat 1 output src/attestation-dens.pdf`.
 - Réaliser votre CV.  Vous pouvez soit vous baser sur le template typst fournit, soit inclure votre CV en pdf dans `src/cv.pdf`, soit inclure
   votre CV écrit en LaTeX dans `src/cv.tex`.
 - Télécharger vos relevés de notes de L3, M1 et M2 (disponibles sur [le cloud](https://cloud.eleves.ens.fr)) dans un fichier nommé
